@@ -36,8 +36,18 @@ El usuario selecciona síntomas en la interfaz web. El frontend envía estos dat
    ```bash
    python app.py
    ```
-5. **Abre el frontend:**
-   - Abre `index.html` en tu navegador.
+
+## 🌐 Cómo abrir la interfaz web
+
+Puedes abrir la interfaz gráfica de usuario de dos formas:
+
+### Opción 1: Usando la extensión **Live Server** de VSCode
+1. Instala la extensión "Live Server" en Visual Studio Code.
+2. Haz clic derecho sobre el archivo `index.html` y selecciona **"Open with Live Server"**.
+3. Se abrirá tu navegador en una dirección como `http://127.0.0.1:5500/index.html` y podrás interactuar con la app.
+
+### Opción 2: Abrir directamente el archivo
+- También puedes abrir `index.html` haciendo doble clic sobre él, pero algunas funciones pueden no funcionar correctamente si el navegador restringe las peticiones locales. Se recomienda usar Live Server o cualquier servidor local.
 
 ## 🐳 Despliegue con Docker
 

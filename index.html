@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Diagnóstico Médico</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <svg class="header-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <h1 class="header-title">Sistema de Diagnóstico Médico</h1>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="grid">
+            <!-- Panel de Síntomas -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">
+                        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                        Seleccionar Síntomas
+                    </h2>
+                </div>
+                <div class="card-content">
+                    <div class="symptoms-list" id="symptomsList">
+                        <!-- Los síntomas se generarán dinámicamente -->
+                    </div>
+
+                    <div class="btn-section">
+                        <div class="symptoms-count">
+                            <span>Síntomas seleccionados: <span class="count-number" id="symptomsCount">0</span></span>
+                        </div>
+
+                        <button class="btn" id="diagnoseBtn" disabled>
+                            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            Realizar Diagnóstico
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel de Resultados -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">
+                        <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        Resultados del Diagnóstico
+                    </h2>
+                </div>
+                <div class="card-content">
+                    <div id="resultsContainer">
+                        <!-- Estado inicial -->
+                        <div class="results-empty" id="emptyState">
+                            <svg class="results-empty-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <p class="results-empty-text">Selecciona síntomas y haz clic en "Realizar Diagnóstico"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

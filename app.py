@@ -6,13 +6,12 @@ from models import crear_modelo
 
 app = FastAPI()
 
-# ← AGREGAR ESTAS LÍNEAS PARA CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Permite todas las URLs
+    allow_origins=["*"],  
     allow_credentials=True,
-    allow_methods=["*"],  # Permite todos los métodos (GET, POST, etc.)
-    allow_headers=["*"],  # Permite todos los headers
+    allow_methods=["*"], 
+    allow_headers=["*"],  
 )
 
 class EvidenceInput(BaseModel):
@@ -26,17 +25,20 @@ def inferencia(input_data: EvidenceInput):
     enfermedades = ['COVID_19', 'Bronquitis', 'Faringitis', 'Neumonia', 'Tuberculosis']
     resultados = {}
     for enfermedad in enfermedades:
-        resultado = inference.query(variables=[enfermedad], evidence=input_data.evidence, show_progress=False)
-        resultados[enfermedad] = round(resultado.values[1], 4)  
+        q = inference.query(
+            variables=[enfermedad],
+            evidence=input_data.evidence,
+            show_progress=False
+        )
+        # Pasamos a porcentaje, multiplicamos por 5, devolvemos a probabilidad
+        porcentaje = q.values[1] * 100
+        valor = round(porcentaje * 5, 2) / 100
+        # Si supera 1.0 (100%), lo limitamos a 0.95
+        resultados[enfermedad] = min(valor, 0.95)
 
-    max_prob = max(resultados.values())
-    target_max = 0.56  
-    if max_prob > 0:
-        factor = target_max / max_prob
-        for key in resultados:
-            resultados[key] = round(min(resultados[key] * factor, 1.0), 4)
-
-    resultados_ordenados = dict(sorted(resultados.items(), key=lambda item: item[1], reverse=True))
+    resultados_ordenados = dict(
+        sorted(resultados.items(), key=lambda item: item[1], reverse=True)
+    )
     return {"resultados": resultados_ordenados}
 
 if __name__ == "__main__":

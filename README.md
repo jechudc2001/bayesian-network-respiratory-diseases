@@ -90,9 +90,9 @@ Puedes probar el endpoint `/infer` desde Swagger UI o usando herramientas como P
 
 Interfaz web para ingresar síntomas:
 
-![Interfaz principal](screenshots/interfaz_web.png)
+![Interfaz principal](screenshots/interfaz.png)
 
 Resultados generados por la red bayesiana:
 
-![Resultados](screenshots/resultados_probabilidades.png)
+![Resultados](screenshots/uso.png)
 

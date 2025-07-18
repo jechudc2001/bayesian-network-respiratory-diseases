@@ -83,9 +83,7 @@ Puedes probar el endpoint `/infer` desde Swagger UI o usando herramientas como P
 ```
 
 ## 📋 Notas
-- Este sistema es solo una herramienta de apoyo y **no reemplaza el diagnóstico médico profesional**.
+- Este sistema es solo una herramienta propuesta incompleta en datos probabilisticos que puedes servir de apoyo y **no reemplaza el diagnóstico médico profesional**.
 - Puedes modificar la red bayesiana en `models.py` para adaptarla a otros escenarios.
 
----
 
-**Desarrollado por [Tu Nombre o Usuario de GitHub]**

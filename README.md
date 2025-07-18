@@ -17,8 +17,8 @@ El usuario selecciona síntomas en la interfaz web. El frontend envía estos dat
 
 1. **Clona el repositorio:**
    ```bash
-   git clone https://github.com/tu_usuario/DiagnosticoRB.git
-   cd DiagnosticoRB
+   git clone https://github.com/jechudc2001/bayesian-network-respiratory-diseases.git
+   cd bayesian-network-respiratory-diseases
    ```
 2. **Crea y activa un entorno virtual:**
    ```bash

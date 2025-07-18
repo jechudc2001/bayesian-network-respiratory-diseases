@@ -30,11 +30,8 @@ def inferencia(input_data: EvidenceInput):
             evidence=input_data.evidence,
             show_progress=False
         )
-        # Pasamos a porcentaje, multiplicamos por 5, devolvemos a probabilidad
-        porcentaje = q.values[1] * 100
-        valor = round(porcentaje * 5, 2) / 100
-        # Si supera 1.0 (100%), lo limitamos a 0.95
-        resultados[enfermedad] = min(valor, 0.95)
+        resultados[enfermedad] = round(q.values[1], 4)
+
 
     resultados_ordenados = dict(
         sorted(resultados.items(), key=lambda item: item[1], reverse=True)

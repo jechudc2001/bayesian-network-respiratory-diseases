@@ -96,7 +96,6 @@ def crear_modelo():
     # COVID_19 = 0, Neumonia = 1 → P(No) = 0.2095, P(Sí) = 0.7905
     # COVID_19 = 1, Neumonia = 0 → P(No) = 0.9895, P(Sí) = 0.0105
     # COVID_19 = 1, Neumonia = 1 → P(No) = 0.9405, P(Sí) = 0.0595
-    # Valores calculados asumiendo independencia condicional entre COVID_19 y Neumonia respecto al Síndrome respiratorio agudo.
 
     cpd_sindrome_infeccioso = TabularCPD(
         variable='Sindrome_infeccioso',
@@ -258,12 +257,11 @@ def crear_modelo():
         cpd_dolor_de_garganta,
         cpd_hemoptisis,
         cpd_dificultad_respiratoria,
-        cpd_dolor_en_el_pecho,   # sólo UNA vez
+        cpd_dolor_en_el_pecho,  
         cpd_sudores_nocturnos,
         cpd_perdida_de_peso
     )
 
     assert model.check_model()
-    print(model.get_cpds('Fiebre'))
     return model
     
